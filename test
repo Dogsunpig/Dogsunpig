@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Effect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff;
+        }
+
+        .slide-in {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4285F4;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        }
+
+        .slide-in.active {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-in" id="slideText">지니의 프로필</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slideText = document.getElementById('slideText');
+            setTimeout(() => {
+                slideText.classList.add('active');
+            }, 500); // 0.5초 후에 슬라이드 인 효과 시작
+        });
+    </script>
+</body>
+</html>
